@@ -1,10 +1,30 @@
-h1{
-    border-color: black;
-    border-radius: 15%;
-    border: 5px;
-    display: block;
-    background:black;
-}
 body{
-    background-color: aqua;
+    background-color: #d5d9e0;
+}
+h1{
+    padding-block: 5%;
+    display: block;
+    font: 3em sans-serif;
+    flex-direction: row;
+    text-align: center;
+    width: 20em;
+}
+
+nav{
+    display: flex;
+    background-color: #4a6d88;
+    border-radius: 1em;
+    align-items: relative;
+
+}
+#navbutton{
+    display: flex;
+    background-color: #4a6d88;
+    align-items: left;
+    align-content: center;
+    width: 10em;
+    border-radius: 1em;
+    border-color: #4a6d88;
+    
+    
 }
