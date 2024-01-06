@@ -28,3 +28,13 @@ nav{
     
     
 }
+div>p{
+    text-align: center;
+    display: block;
+    margin: 5px;
+    border: 10px;
+    border-color: #4a6d88;
+    font-style: sans-serif;
+    font-weight: 900;
+
+}
