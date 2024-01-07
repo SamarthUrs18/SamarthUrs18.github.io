@@ -28,6 +28,11 @@ nav{
     
     
 }
+.body{
+    height: 500px;
+    display: block;
+}
+
 div>p{
     text-align: center;
     display: block;
@@ -37,4 +42,16 @@ div>p{
     font-style: sans-serif;
     font-weight: 900;
 
+}
+.base{
+    display: block;
+    height: 100px;
+    background-color: aquamarine;
+    border-radius: 1em;
+
+}
+#thank>h2{
+    justify-content: center;
+    display: grid;
+    
 }
