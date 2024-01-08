@@ -29,8 +29,9 @@ nav{
     
 }
 .body{
-    height: 500px;
+    height: 250px;
     display: block;
+    align-items: center;
 }
 
 div>p{
@@ -41,6 +42,12 @@ div>p{
     border-color: #4a6d88;
     font-style: sans-serif;
     font-weight: 900;
+
+}
+.svg{
+    display: block;
+    justify-content: center;
+    align-items: center;
 
 }
 /*this is for footer*/
