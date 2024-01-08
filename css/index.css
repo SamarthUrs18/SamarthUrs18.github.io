@@ -43,6 +43,7 @@ div>p{
     font-weight: 900;
 
 }
+/*this is for footer*/
 .base{
     display: block;
     height: 100px;
@@ -50,6 +51,7 @@ div>p{
     border-radius: 1em;
 
 }
+/*this is for footer thank you*/
 #thank>h2{
     justify-content: center;
     display: grid;
