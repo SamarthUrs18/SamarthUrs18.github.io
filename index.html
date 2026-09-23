@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samarth Urs - Portfolio</title>
+    <title>Samarth Urs — AI Engineer, Conversational &amp; Voice AI</title>
+    <meta name="description" content="Samarth Urs — AI and Data Science engineer building real-time conversational voice AI. Author of fusion-runtime, an open-source self-hosted voice AI runtime.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
         .section-title {
-            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+            font-size: 1.875rem; line-height: 2.25rem; font-weight: 700;
+            color: #1f2937; margin-bottom: 2rem; text-align: center;
         }
         .card {
-            @apply bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105;
+            background-color: #fff; border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            padding: 1.5rem; transition: transform .2s ease;
+            display: flex; flex-direction: column;
         }
+        .card:hover { transform: translateY(-3px); }
+        .card .card-link { margin-top: auto; }
+        .tag {
+            display: inline-block; background-color: #f3f4f6; color: #374151;
+            border-radius: 9999px; padding: 0.2rem 0.7rem;
+            font-size: 0.8rem; margin: 0.15rem 0.15rem 0 0;
+        }
+        .metric { font-variant-numeric: tabular-nums; font-weight: 600; color: #1f2937; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-700">
@@ -24,13 +35,14 @@
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-800">Samarth Urs</a>
-            <div class="hidden md:flex space-x-6">
+            <div class="hidden md:flex space-x-6 items-center">
                 <a href="#about" class="text-gray-600 hover:text-gray-800">About</a>
+                <a href="#experience" class="text-gray-600 hover:text-gray-800">Experience</a>
                 <a href="#skills" class="text-gray-600 hover:text-gray-800">Skills</a>
                 <a href="#projects" class="text-gray-600 hover:text-gray-800">Projects</a>
-                <a href="#activities" class="text-gray-600 hover:text-gray-800">Activities</a>
                 <a href="#education" class="text-gray-600 hover:text-gray-800">Education</a>
                 <a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a>
+                <a href="resume.html" class="border border-gray-300 px-3 py-1.5 rounded-lg hover:bg-gray-100">Résumé</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden flex items-center">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -38,11 +50,12 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden">
             <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-200">Experience</a>
             <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200">Skills</a>
             <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
-            <a href="#activities" class="block py-2 px-4 text-sm hover:bg-gray-200">Activities</a>
             <a href="#education" class="block py-2 px-4 text-sm hover:bg-gray-200">Education</a>
             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+            <a href="resume.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Résumé</a>
         </div>
     </header>
 
@@ -50,167 +63,198 @@
     <section id="about" class="bg-white py-20">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div class="text-center md:text-left">
-                <h1 class="text-5xl font-bold text-gray-800 mb-4">Samarth Urs</h1>
-                <p class="text-xl text-gray-600 mb-8">Artificial Intelligence & Data Science Student</p>
-                <p class="text-lg">AI & Data Science student and open-source builder. I work on real-time voice agents and AI tooling — most recently a multilingual STT/TTS plugin for LiveKit Agents, plus side projects in web and product. Always shipping, always learning.</p>
+                <h1 class="text-5xl font-bold text-gray-800 mb-3">Samarth Urs</h1>
+                <p class="text-xl text-gray-600 mb-6">AI Engineer &middot; Conversational &amp; Voice AI</p>
+                <p class="text-lg mb-6">I build real-time conversational voice AI. At <strong>Pype AI</strong> I took voice agents into production — owning Whispey, an observability platform for live voice systems, and engineering agents that automated patient interaction workflows at scale.</p>
+                <p class="text-lg">I'm now building <strong>fusion-runtime</strong>, an open-source self-hosted voice AI runtime that puts speech-to-text, the language model and text-to-speech in one process — <span class="metric">~490 ms</span> from turn-end to first audio, with the audio never leaving your machine.</p>
+                <div class="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
+                    <a href="#projects" class="bg-gray-800 text-white px-5 py-2.5 rounded-lg hover:bg-gray-700 transition-colors">View my work</a>
+                    <a href="resume.html" class="border border-gray-300 px-5 py-2.5 rounded-lg hover:bg-gray-100 transition-colors">Résumé</a>
+                </div>
             </div>
             <div class="flex justify-center">
-                <!-- IMPORTANT: Rename your face image to 'profile.jpg' and place it in the same folder as this file. -->
                 <img src="IMG_20250528_195152.jpg" alt="Samarth Urs" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl">
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <h2 class="section-title">Experience</h2>
+            <div class="max-w-4xl mx-auto">
                 <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
-                    <p>Python, Java, Javascript (NodeJS), C++</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Frameworks & Libraries</h3>
-                    <p>Django, Matplotlib, Pandas, Numpy, Sklearn</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Software</h3>
-                    <p>PowerBI, Tableau, VS Code, PowerPoint, Excel, AZURE</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Database & Version Control</h3>
-                    <p>MySQL, MongoDB, Git, Github</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="bg-white py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Web Crawler</h3>
-                    <p class="mb-4">An automated web links extraction tool built on NodeJS. It analyzes websites for hidden web-links and is used in Search Engine Optimization.</p>
-                    <a href="https://github.com/SamarthUrs18/webcrawlerhttp" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Todo List App</h3>
-                    <p class="mb-4">A web application for tracking daily habits and tasks, built with Python and the Django web framework for personal use.</p>
-                    <a href="https://github.com/SamarthUrs18/todoApp" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
-                    <p class="mb-4">A simple static website for showcasing all my blogs, projects and my details. Hosted using GitHub Pages.</p>
-                    <a href="https://github.com/SamarthUrs18/SamarthUrs18.github.io" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-                </div>
-                 <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Vehicle Class Detection</h3>
-                    <p class="mb-4">A Computer Vision project for classifying vehicles in real-time using OpenCV and YOLOv8. It also counts vehicles and calculates their speed.</p>
-                    <p class="text-sm text-gray-500">Currently under development.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Sarvam Plugin for LiveKit Agents</h3>
-                    <p class="mb-4">A multilingual STT/TTS plugin for the LiveKit Agents framework, integrating the Sarvam AI API to enable real-time voice agents in Hindi, Kannada, and other Indian languages.</p>
-                    <a href="https://github.com/SamarthUrs18/agents" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Famo</h3>
-                    <p class="mb-4">A side-project SaaS in progress — a Next.js + Supabase monorepo exploring product ideas at the intersection of AI and everyday workflows.</p>
-                    <a href="https://github.com/SamarthUrs18" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Activities Section -->
-    <section id="activities" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">Activities & Highlights</h2>
-            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden md:flex">
-                <div class="md:w-1/2">
-                    <!-- IMPORTANT: Rename your speech image to 'speech.jpg' and place it in the same folder. -->
-                    <img src="WhatsApp Image 2025-10-04 at 22.42.53.jpeg" alt="Samarth Urs" class="w-full h-full object-cover">
-                </div>
-                <div class="p-8 md:w-1/2">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Co-curricular & Extra-curricular</h3>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Competed in Kaggle's 'Titanic: Machine Learning from Disaster', ranking 2271 out of over 13,000 participants.</li>
-                        <li>Participated in multiple college-level hackathons.</li>
-                        <li>Completed numerous online courses on topics like NLP, Deep Learning, and Computer Vision via Infosys Springboard.</li>
-                        <li>Volunteered in the College Annual Fest (Cultura-24), helping to ensure the event ran smoothly.</li>
+                    <div class="md:flex md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-xl font-semibold text-gray-800">Pype AI <span class="font-normal text-gray-500 text-base">(Singularity Corp Pvt. Ltd.)</span></h3>
+                        <p class="text-gray-500 text-sm whitespace-nowrap">Jan 2026 &ndash; Sep 2026 &middot; Bengaluru</p>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">AI Intern (Jan&ndash;Jun) &rarr; AI Engineer, Conversational &amp; Voice AI (Jul&ndash;Sep)</p>
+                    <ul class="list-disc list-outside ml-5 space-y-2">
+                        <li>Built and then owned <strong>Whispey</strong>, an observability platform and voice analytics dashboard for monitoring production voice AI systems — from initial build through full-time ownership.</li>
+                        <li>Engineered and maintained real-time conversational agents on <strong>LiveKit</strong> and <strong>Pipecat</strong>, automating patient interaction workflows at production scale.</li>
+                        <li>Audited production call data — latency bottlenecks, call failures and conversational edge cases — to improve the reliability of live voice pipelines.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="bg-white py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-3">Languages</h3>
+                    <div><span class="tag">Python (async/await)</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Bash</span></div>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-3">Voice AI &amp; Real-Time</h3>
+                    <div><span class="tag">LiveKit</span><span class="tag">Pipecat</span><span class="tag">WebRTC</span><span class="tag">WebSockets</span><span class="tag">STT/LLM/TTS pipelines</span><span class="tag">Barge-in &amp; turn detection</span></div>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-3">AI/ML Inference</h3>
+                    <div><span class="tag">faster-whisper</span><span class="tag">CTranslate2</span><span class="tag">llama-cpp-python</span><span class="tag">ONNX Runtime</span><span class="tag">Kokoro-82M</span><span class="tag">Silero VAD</span><span class="tag">PyTorch</span><span class="tag">Hugging Face</span><span class="tag">OpenCV</span><span class="tag">YOLOv11</span></div>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-3">Web Development</h3>
+                    <div><span class="tag">FastAPI</span><span class="tag">Uvicorn</span><span class="tag">Pydantic v2</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Supabase</span></div>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-3">Observability &amp; Tooling</h3>
+                    <div><span class="tag">Prometheus</span><span class="tag">Structured telemetry</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">PyPI packaging</span><span class="tag">Typer CLI</span></div>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-3">Cloud &amp; Platform</h3>
+                    <div><span class="tag">Vercel</span><span class="tag">Google Cloud</span><span class="tag">Cloudflare Pages</span><span class="tag">Git/GitHub</span><span class="tag">Power BI</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Projects</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-1">fusion-runtime</h3>
+                    <p class="text-sm text-gray-500 mb-3">Self-hosted voice AI runtime &middot; Apache-2.0 &middot; Python</p>
+                    <p class="mb-4">A single-process STT&rarr;LLM&rarr;TTS voice agent runtime that streams between stages instead of serialising through network hops, so synthesis begins while the LLM is still generating.</p>
+                    <ul class="list-disc list-outside ml-5 space-y-2 mb-4 text-sm">
+                        <li><span class="metric">~490 ms</span> turn-end to first audio on an RTX 3090 with a 7B GGUF model, at <span class="metric">127 tok/s</span>.</li>
+                        <li>Acoustic echo cancellation written from scratch — STFT filter bank, NLMS adaptive FIR, GCC-PHAT delay estimation — validated at <span class="metric">30 dB</span> suppression, enabling server-side barge-in.</li>
+                        <li>A runtime-adapter contract keyed on inference engine, so any Whisper checkpoint or GGUF model runs with zero new code.</li>
+                        <li>Deadline-ordered, concurrency-limited scheduler sharing one loaded model across sessions, with a publicly documented degradation curve.</li>
+                        <li>Shipped <strong>v0.1.0</strong> with a Typer CLI, a browser client over AudioWorklet + WebSockets, Prometheus metrics and CI across Python 3.11&ndash;3.13.</li>
+                    </ul>
+                    <div class="mb-4"><span class="tag">Python</span><span class="tag">Apache-2.0</span><span class="tag">PyPI</span></div>
+                    <!-- TODO: add GitHub link once fusion-runtime is re-uploaded -->
+                    <a href="https://pypi.org/project/fusion-runtime/" target="_blank" rel="noopener" class="card-link text-blue-500 hover:underline">View on PyPI</a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-1">FaMo (Famous Model)</h3>
+                    <p class="text-sm text-gray-500 mb-3">React &middot; Supabase &middot; Vercel</p>
+                    <p class="mb-4">A social platform built for the modelling industry, connecting talent with agencies.</p>
+                    <ul class="list-disc list-outside ml-5 space-y-2 mb-4 text-sm">
+                        <li>Real-time backend on <strong>Supabase</strong> handling user profiles, social feeds and secure authentication.</li>
+                        <li>Responsive React frontend deployed on <strong>Vercel</strong>, with a custom domain managed through Hostinger.</li>
+                    </ul>
+                    <div class="mb-4"><span class="tag">React</span><span class="tag">Supabase</span><span class="tag">Vercel</span></div>
+                    <p class="card-link text-sm text-gray-500">In development.</p>
+                </div>
+            </div>
+
+            <h3 class="text-center text-gray-500 font-semibold mt-12 mb-6 uppercase tracking-wide text-sm">Earlier work</h3>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Vehicle Class Detection</h3>
+                    <p class="mb-4 text-sm">A computer vision pipeline classifying vehicles in real time with OpenCV and YOLO, counting them and estimating speed from the video stream.</p>
+                    <div><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">YOLO</span></div>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Web Crawler</h3>
+                    <p class="mb-4 text-sm">A Node.js link-extraction tool that walks a site, maps its internal link graph and surfaces hard-to-reach pages — useful for SEO auditing.</p>
+                    <div class="mb-4"><span class="tag">Node.js</span><span class="tag">JavaScript</span></div>
+                    <a href="https://github.com/SamarthUrs18/webcrawlerhttp" target="_blank" rel="noopener" class="card-link text-blue-500 hover:underline text-sm">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="bg-white py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Achievements &amp; Certifications</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Kaggle</h3>
+                    <p class="text-sm">Ranked <span class="metric">2271 / 13131</span> in "Titanic — Machine Learning from Disaster".</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Open Source</h3>
+                    <p class="text-sm">Author of fusion-runtime, published to PyPI under Apache-2.0.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-2">Infosys Springboard</h3>
+                    <p class="text-sm">Certifications in Deep Learning, NLP and Data Science.</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-8 text-sm">Off the keyboard: motorcycle touring on a Himalayan 450, and learning languages.</p>
+        </div>
+    </section>
 
     <!-- Education Section -->
-    <section id="education" class="bg-white py-20">
+    <section id="education" class="py-20">
         <div class="container mx-auto px-6">
             <h2 class="section-title">Education</h2>
             <div class="max-w-4xl mx-auto">
-                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                    <h3 class="text-xl font-semibold">Bachelor of Engineering: Artificial Intelligence and Data Science</h3>
-                    <p class="text-gray-600">CMR Institute of Technology, Bangalore</p>
-                    <p class="text-gray-500">2022 - 2026 (Pursuing) | 7.41 CGPA</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                    <h3 class="text-xl font-semibold">Pre-University: Science (PCMC)</h3>
-                    <p class="text-gray-600">St Mary's PU College, Chikkamagalur</p>
-                    <p class="text-gray-500">2022 | 85.66%</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold">10th Grade (ICSE)</h3>
-                    <p class="text-gray-600">St Mary's International School, Chikkamagalur</p>
-                    <p class="text-gray-500">2020 | 77%</p>
+                <div class="card">
+                    <div class="md:flex md:justify-between md:items-baseline">
+                        <h3 class="text-xl font-semibold">B.E., Artificial Intelligence &amp; Data Science</h3>
+                        <p class="text-gray-500 text-sm">2022 &ndash; 2026</p>
+                    </div>
+                    <p class="text-gray-600">CMR Institute of Technology, Bengaluru</p>
+                    <p class="text-gray-500 text-sm mt-2">Coursework: Data Structures &amp; Algorithms, DBMS, Operating Systems, Artificial Intelligence.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
+    <section id="contact" class="bg-white py-20">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="max-w-2xl mx-auto text-lg mb-8">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <p class="max-w-2xl mx-auto text-lg mb-2">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <p class="text-gray-500 mb-8">Bengaluru, India</p>
             <div class="flex justify-center space-x-6">
-                <a href="https://github.com/SamarthUrs18" target="_blank" class="text-gray-600 hover:text-gray-800">
+                <a href="https://github.com/SamarthUrs18" target="_blank" rel="noopener" aria-label="GitHub" class="text-gray-600 hover:text-gray-800">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/samarth-urs-ba8440181/" target="_blank" class="text-gray-600 hover:text-gray-800">
+                <a href="https://www.linkedin.com/in/samarth-urs-ba8440181/" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-600 hover:text-gray-800">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-                 <a href="https://leetcode.com/u/SamarthUrs18/" target="_blank" class="text-gray-600 hover:text-gray-800 font-bold text-2xl">
-                    LC
-                </a>
-                <a href="https://x.com/samarth_urs" target="_blank" class="text-gray-600 hover:text-gray-800">
-                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 300 300" aria-hidden="true"><path d="M178.57 127.15 290.27 0h-26.46l-99.42 110.9-79.1-110.9H0l117.13 166.52L0 300.25h26.46l104.05-116.29 83.17 116.29h86.45L178.57 127.15Zm-20.73 22.19L144.54 133l-93.5-132.33h40.38l75.45 106.58 13.3 18.81 98.43 139.33h-40.38l-79.62-112.55Z"></path></svg>
+                <a href="https://x.com/samarth_urs" target="_blank" rel="noopener" aria-label="X" class="text-gray-600 hover:text-gray-800">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 300 300" aria-hidden="true"><path d="M178.57 127.15 290.27 0h-26.46l-99.42 110.9-79.1-110.9H0l117.13 166.52L0 300.25h26.46l104.05-116.29 83.17 116.29h86.45L178.57 127.15Zm-20.73 22.19L144.54 133l-93.5-132.33h40.38l75.45 106.58 13.3 18.81 98.43 139.33h-40.38l-79.62-112.55Z"></path></svg>
                 </a>
             </div>
-             <p class="mt-8 text-lg">Email: <a href="mailto:urssamarth17@gmail.com" class="text-blue-500 hover:underline">urssamarth17@gmail.com</a></p>
+            <p class="mt-8 text-lg">Email: <a href="mailto:urssamarth17@gmail.com" class="text-blue-500 hover:underline">urssamarth17@gmail.com</a></p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 Samarth Urs. All Rights Reserved.</p>
+            <p>&copy; 2026 Samarth Urs. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // Close mobile menu when a link is clicked
         const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
         for (let i = 0; i < mobileMenuLinks.length; i++) {
             mobileMenuLinks[i].addEventListener('click', () => {
@@ -218,7 +262,5 @@
             });
         }
     </script>
-
 </body>
 </html>
-

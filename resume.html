@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samarth Urs — Résumé</title>
+    <meta name="description" content="Résumé of Samarth Urs, AI Engineer specialising in conversational and voice AI.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #003366; --ink: #24292f; --muted: #57606a; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            color: var(--ink); background: #f3f4f6;
+            margin: 0; padding: 2rem 1rem; line-height: 1.5;
+        }
+        .sheet {
+            max-width: 52rem; margin: 0 auto; background: #fff;
+            padding: 2.75rem 3rem; border-radius: .5rem;
+            box-shadow: 0 10px 25px rgb(0 0 0 / .08);
+        }
+        header { text-align: center; margin-bottom: 1.5rem; }
+        h1 { font-size: 2.1rem; letter-spacing: .02em; margin: 0 0 .4rem; color: var(--ink); }
+        .contact { font-size: .9rem; color: var(--muted); }
+        .contact a { color: var(--navy); text-decoration: none; }
+        .contact a:hover { text-decoration: underline; }
+        .sep { color: #d0d7de; margin: 0 .45rem; }
+        h2 {
+            font-size: 1rem; text-transform: uppercase; letter-spacing: .06em;
+            color: var(--navy); border-bottom: 1.5px solid var(--navy);
+            padding-bottom: .25rem; margin: 1.75rem 0 .75rem;
+        }
+        .row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+        .org { font-weight: 700; }
+        .when { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+        .role { font-style: italic; color: var(--muted); margin: .1rem 0 .4rem; font-size: .93rem; }
+        ul { margin: .4rem 0 .9rem; padding-left: 1.15rem; }
+        li { margin-bottom: .3rem; }
+        p { margin: .4rem 0; }
+        .skills li { margin-bottom: .35rem; }
+        a { color: var(--navy); }
+        .back {
+            display: inline-block; max-width: 52rem; margin: 0 auto 1rem;
+            color: var(--navy); text-decoration: none; font-size: .9rem;
+        }
+        .back-wrap { max-width: 52rem; margin: 0 auto; }
+        .print-hint { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 1.25rem; }
+        @media print {
+            body { background: #fff; padding: 0; font-size: 10.5pt; }
+            .sheet { box-shadow: none; padding: 0; max-width: none; border-radius: 0; }
+            .back-wrap, .print-hint { display: none; }
+            h2 { margin-top: 1rem; }
+            a { color: var(--navy); text-decoration: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-wrap"><a class="back" href="index.html">&larr; Back to portfolio</a></div>
+    <div class="sheet">
+        <header>
+            <h1>SAMARTH URS</h1>
+            <p class="contact">Bengaluru, India</p>
+            <p class="contact">
+                <a href="mailto:urssamarth17@gmail.com">urssamarth17@gmail.com</a>
+            </p>
+            <p class="contact">
+                <a href="https://www.linkedin.com/in/samarth-urs-ba8440181/" target="_blank" rel="noopener">linkedin.com/in/samarth-urs-ba8440181</a><span class="sep">|</span>
+                <a href="https://github.com/SamarthUrs18" target="_blank" rel="noopener">github.com/SamarthUrs18</a><span class="sep">|</span>
+                <a href="https://samarthurs18.github.io/">samarthurs18.github.io</a>
+            </p>
+        </header>
+
+        <h2>Professional Summary</h2>
+        <p><strong>Artificial Intelligence &amp; Data Science</strong> engineer with hands-on production experience building <strong>real-time conversational voice AI systems</strong> at Pype AI, from internship through a full-time engineering role. Currently building <strong>fusion-runtime</strong>, an open-source voice AI runtime competing with LiveKit and Pipecat. Strong foundation in <strong>voice AI architecture</strong>, <strong>observability tooling</strong> and <strong>full-stack development</strong>.</p>
+
+        <h2>Experience</h2>
+        <div class="row">
+            <span class="org">Pype AI (Singularity Corp Pvt. Ltd.), Bengaluru</span>
+            <span class="when">Jan 2026 &ndash; Sep 2026</span>
+        </div>
+        <p class="role">AI Intern (Jan&ndash;Jun) &rarr; AI Engineer — Conversational &amp; Voice AI, Full-Time (Jul&ndash;Sep)</p>
+        <ul>
+            <li>Built and then owned <strong>Whispey</strong>, an observability platform and AI voice analytics dashboard for monitoring production voice AI systems, from initial build through full-time ownership.</li>
+            <li>Engineered and maintained real-time conversational agents using <strong>LiveKit</strong> and <strong>Pipecat</strong>, automating patient interaction workflows at production scale.</li>
+            <li>Audited production call data — latency bottlenecks, call issues and conversational edge cases — to improve the reliability of live AI voice pipelines.</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <div class="row">
+            <span class="org">fusion-runtime (Open Source)</span>
+            <span class="when"><a href="https://pypi.org/project/fusion-runtime/" target="_blank" rel="noopener">pypi.org/project/fusion-runtime</a></span>
+        </div>
+        <p class="role">Self-hosted voice AI runtime &middot; Apache-2.0 &middot; Python</p>
+        <ul>
+            <li>Built a <strong>single-process STT&rarr;LLM&rarr;TTS voice agent runtime</strong> that streams between stages instead of serialising through network hops, so synthesis begins while the LLM is still generating — cutting perceived response time. Measured <strong>~490 ms turn-end-to-first-audio</strong> on an RTX 3090 with a 7B GGUF model at <strong>127 tok/s</strong>.</li>
+            <li>Designed a <strong>runtime-adapter contract keyed on inference engine</strong> (<code>ctranslate2</code>, <code>llama_cpp</code>, <code>onnx</code>, <code>openai_http</code>), letting any Whisper checkpoint or GGUF model run with zero new code, enforced by a reusable conformance test kit.</li>
+            <li>Wrote <strong>acoustic echo cancellation from scratch</strong> (STFT filter bank, NLMS adaptive FIR, GCC-PHAT delay estimation), validated at <strong>30 dB suppression</strong> on laptop speakers, enabling server-side barge-in with sub-10 ms client-side playback flush.</li>
+            <li>Built a <strong>deadline-ordered, concurrency-limited scheduler</strong> sharing one loaded model across sessions; load-tested and publicly documented the degradation curve (4 callers: ~740 ms, 8 callers: ~4.6 s).</li>
+            <li>Shipped <strong>v0.1.0 to PyPI</strong> with a Typer CLI, a browser client over AudioWorklet + WebSockets, Prometheus metrics and CI across Python 3.11&ndash;3.13.</li>
+        </ul>
+
+        <div class="row">
+            <span class="org">FaMo (Famous Model) App</span>
+            <span class="when">React, Supabase, Vercel</span>
+        </div>
+        <ul>
+            <li>Developing a comprehensive <strong>social media platform</strong> tailored for the modelling industry, connecting talent with agencies.</li>
+            <li>Architected a real-time backend using <strong>Supabase</strong> to handle user profiles, social feeds and secure authentication.</li>
+            <li>Deployed the responsive React frontend on <strong>Vercel</strong>, configuring a custom domain managed via <strong>Hostinger</strong>.</li>
+        </ul>
+
+        <h2>Technical Skills</h2>
+        <ul class="skills">
+            <li><strong>Languages:</strong> Python (async/await), TypeScript, Java, JavaScript (AudioWorklet), SQL, Bash</li>
+            <li><strong>Voice AI &amp; Real-Time Systems:</strong> LiveKit, Pipecat, WebRTC, WebSockets (bidirectional PCM streaming), STT/LLM/TTS pipeline design, barge-in &amp; turn detection</li>
+            <li><strong>AI/ML Inference:</strong> faster-whisper/CTranslate2, llama-cpp-python (GGUF), ONNX Runtime, Kokoro-82M, Silero VAD, PyTorch/torchaudio, Hugging Face Hub, Gemini 3 Pro, OpenCV, YOLOv11</li>
+            <li><strong>Web Development:</strong> FastAPI, Uvicorn, Pydantic v2, Next.js, React.js, Node.js (MERN), Supabase, HTML5, CSS3</li>
+            <li><strong>Observability &amp; Tooling:</strong> Prometheus, structured telemetry, GitHub Actions, Docker, PyPI packaging, Typer CLI</li>
+            <li><strong>Cloud &amp; Platform:</strong> Vercel, Google Cloud (GCP), Cloudflare Pages, Git/GitHub, Power BI</li>
+        </ul>
+
+        <h2>Education</h2>
+        <div class="row">
+            <span class="org">CMR Institute of Technology, Bengaluru</span>
+            <span class="when">2022 &ndash; 2026</span>
+        </div>
+        <p class="role">B.E. in Artificial Intelligence &amp; Data Science</p>
+        <p>Relevant coursework: Data Structures &amp; Algorithms, DBMS, Operating Systems, Artificial Intelligence.</p>
+
+        <h2>Achievements &amp; Certifications</h2>
+        <ul>
+            <li><strong>Kaggle:</strong> ranked <strong>2271/13131</strong> in "Titanic — Machine Learning from Disaster".</li>
+            <li><strong>Open Source:</strong> author of fusion-runtime, published to PyPI under Apache-2.0.</li>
+            <li><strong>Infosys Springboard:</strong> completed certifications in Deep Learning, NLP and Data Science.</li>
+        </ul>
+
+        <h2>Interests</h2>
+        <p><strong>Technical:</strong> building with LLMs, quantitative aptitude &nbsp;&nbsp; <strong>Personal:</strong> motorcycle touring (Himalayan 450), learning languages</p>
+    </div>
+    <p class="print-hint">Tip: print this page (Cmd/Ctrl + P) to save a PDF copy.</p>
+</body>
+</html>
